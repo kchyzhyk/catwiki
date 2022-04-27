@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+:root {
+    --main-logo-color: #291507;
+    --main-intro-color: #050709;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+@font-face {
+    font-family: "MysteryQuest-Regular";
+    src: url('css/fonts/MysteryQuest-Regular.ttf') format("opentype");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url('css/fonts/Montserrat-Variable.ttf') format("opentype");
+}
+
+
+
+.container {
+    margin: 0 auto;
+    max-width: 1240px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    width: 100%;
+    padding: 36px 0 39px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.App-logo {
+    font-family: MysteryQuest-Regular, sans-serif;
+    font-size: 24px;
+
+    text-decoration: none;
+    color: var(--main-logo-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.intro {
+    border-radius: 40px 40px 0 0;
+    background: var(--main-intro-color);
+    padding: 115px 0 144px 108px;
+}
+
+.whiteLogo {
+    width: 300px;
+    height: 100px;
+    max-width: 300px;
+    margin: 0 0 11px 0;
+}
+
+.introText {
+font-family: 'Montserrat-Regular', sans-serif;
+    font-size: 24px;
+    color: white;
 }
