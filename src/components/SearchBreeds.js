@@ -4,17 +4,43 @@ import {getAllBreeds} from "../api/store";
 import {Link} from "react-router-dom";
 
 export const SearchBreeds = () => {
+    const [allBreeds, setAllBreeds] = useState([
+        'Book',
+        'pear',
+        'l.addams',
+        'George',
+        'Bengal',
+        'trip',
+        'reason',
+        'near',
+        'wave',
+        'concerned',
+        'drain',
+        'vast',
+        'use',
+        'beam',
+        'massive',
+        'volcano',
+        'servant'
+    ])
 
-    const [allBreeds, setAllBreeds] = useState([])
+    // useEffect(() => {
+    //     getAllBreeds().then(r => setAllBreeds(r.map((it) => it.name)))
+    // }, [])
 
-    useEffect(() => {
-        getAllBreeds().then(r => setAllBreeds(r.map((it) => it.name)))
-    }, [])
+    const handleChange = (e) => {
+        const value = e.target.value.toLowerCase().split('');
+        console.log(value)
+
+        allBreeds.filter((item) => item.toLowerCase().includes(value) ? console.log('here i am', item) : item)
+    }
+
     return (
         <form className="form">
             <input type="text"
                    className="search"
                    placeholder="Enter your breed"
+                   onChange={handleChange}
             />
             <SearchIcon className="search-icon"/>
 
