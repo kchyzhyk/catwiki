@@ -1,31 +1,21 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {Link} from "react-router-dom";
 import IntroLogo from "../css/img/logo-white.svg";
-import SearchIcon from "@material-ui/icons/Search";
 import Arrow from "../css/img/read-more-arrow.png";
-import {getAllBreeds} from "../api/store";
+import {Header} from "../components/Header";
+import {SearchBreeds} from "../components/SearchBreeds";
 
 export const HomePage = () => {
 
-    useEffect(async() => {
-
-    })
-
     return (
         <div>
+            <Header/>
             <div className="intro">
                 <img src={IntroLogo} alt="" className="whiteLogo"/>
                 <div className="introText">
                     Get to know more about your <br/> cat breed
                 </div>
-                <form className="form">
-                    <input type="text"
-                           className="search"
-                           placeholder="Enter your breed"
-                    />
-                    <SearchIcon
-                        className="search-icon"/>
-                </form>
+                <SearchBreeds />
             </div>
             <div className="top-breeds">
                 <div className="top-breeds-title">Most Searched Breeds</div>

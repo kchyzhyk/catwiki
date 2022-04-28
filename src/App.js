@@ -1,8 +1,5 @@
 import './App.css';
-import {ReactComponent as Logo} from '../src/css/img/logo.svg'
 import IntroLogo from '../src/css/img/logo-white.svg'
-import SearchIcon from '@material-ui/icons/Search';
-import Arrow from './css/img/read-more-arrow.png'
 import {BrowserRouter as Router, Link} from "react-router-dom";
 import {HomePage} from "./pages/HomePage";
 

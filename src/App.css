@@ -333,3 +333,49 @@
     line-height: calc(22 / 18 * 100%);
     color: #FFFFFF;
 }
+
+.all-breeds {
+    color: #000;
+}
+
+
+.names-list {
+    background: white;
+    height: auto;
+    max-height: 150px;
+    width: 50%;
+    max-width: 200px;
+    border-radius: 24px;
+    overflow-y: auto;
+    margin: .5rem -1.5rem;
+    padding: 0 1rem;
+    z-index: 2;
+    position: absolute;
+}
+.names-list::-webkit-scrollbar {
+    width: 22px;
+}
+.names-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 14px 14px lightgray;
+    border: solid 8px transparent;
+    border-radius: 16px;
+}
+.names-list::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 10px 10px gray;
+    border: solid 8px transparent;
+    border-radius: 40px;
+    height: 50%;
+}
+
+ul.names-list {
+    color: #291507;
+    list-style: none;
+    width: 100%;
+    height: 90%;
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+
+div.hidden, ul.hidden {
+    display: none;
+}
