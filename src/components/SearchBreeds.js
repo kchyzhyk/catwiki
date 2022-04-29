@@ -4,7 +4,7 @@ import {getAllBreeds} from "../api/store";
 import {Link} from "react-router-dom";
 
 export const SearchBreeds = () => {
-    const [getOne, setGetOne] = useState([])
+    const [showList, setShowList] = useState(false)
     const [allBreeds, setAllBreeds] = useState([
         // 'Book',
         // 'pear',
@@ -24,17 +24,17 @@ export const SearchBreeds = () => {
         // 'volcano',
         // 'servant'
     ])
+    const [getOne, setGetOne] = useState([])
 
     useEffect(() => {
         getAllBreeds().then(r => setAllBreeds(r.map((it) => it.name)))
     }, [])
 
     const handleChange = (e) => {
-        const value = e.target.value.toLowerCase();
-        console.log(value)
-        // const results = new Array()
-        allBreeds.map((item) => item.toLowerCase().includes(value) ? console.log('results', item) : item)
-        // console.log('results', results)
+        const value = e.target.value.trim().toLowerCase();
+        const results = []
+        allBreeds.map((item) => item.toLowerCase().includes(value) ? results.push(item) : item)
+        setGetOne(results)
     }
 
     return (
@@ -44,18 +44,24 @@ export const SearchBreeds = () => {
                    className="search"
                    placeholder="Enter your breed"
                    onChange={handleChange}
+                   onClick={() => setShowList(true)}
             />
             <SearchIcon className="search-icon"/>
 
-            <div className="names-list">
-                <ul>
-                    {allBreeds.map((name, index) =>
-                        <Link className="list-item" to={`/breeds/search/${name}`}>
-                            <li key={index}> {name} </li>
-                        </Link>
-                    )}
-                </ul>
-            </div>
+            {
+                showList && getOne.length > 0 ?
+                    <div className="names-list">
+                        <ul>
+                            {getOne.map((name, index) =>
+                                <Link className="list-item" to={`/breeds/search/${name}`}>
+                                    <li key={index}> {name} </li>
+                                </Link>
+                            )}
+                        </ul>
+                    </div>
+                    :
+                    (<div />)
+            }
         </form>
     )
 }
