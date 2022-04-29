@@ -9,7 +9,6 @@ export const HomePage = () => {
 
     return (
         <div>
-            <Header/>
             <div className="intro">
                 <img src={IntroLogo} alt="" className="whiteLogo"/>
                 <div className="introText">

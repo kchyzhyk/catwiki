@@ -15,10 +15,16 @@
     src: url('css/fonts/Montserrat-Variable.ttf') format("opentype");
 }
 
+.App {
+}
 
 .container {
     margin: 0 auto;
     max-width: 1240px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .App-header {
@@ -318,6 +324,7 @@
     border-radius: 42px 42px 0 0;
 
     bottom: 0;
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
