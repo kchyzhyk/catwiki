@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 
 export const SearchBreeds = () => {
     const [showList, setShowList] = useState(false)
+    const [allInfo, setAllInfo] = useState([])
     const [allBreeds, setAllBreeds] = useState([
         // 'Book',
         // 'pear',
@@ -27,19 +28,21 @@ export const SearchBreeds = () => {
     const [getOne, setGetOne] = useState([])
 
     useEffect(() => {
-        getAllBreeds().then(r => setAllBreeds(r.map((it) => it.name)))
+        getAllBreeds().then(r => {
+            setAllInfo(r)
+            // setAllBreeds(r.map((it) => it.name))
+        })
     }, [])
 
     const handleChange = (e) => {
         const value = e.target.value.trim().toLowerCase();
         const results = []
-        allBreeds.map((item) => item.toLowerCase().includes(value) ? results.push(item) : item)
+        allInfo.map((item) => item.name.toLowerCase().includes(value) ? results.push(item) : item)
         setGetOne(results)
     }
 
     return (
         <form className="form">
-            {/*{console.log(getOne)}*/}
             <input type="text"
                    className="search"
                    placeholder="Enter your breed"
@@ -52,9 +55,9 @@ export const SearchBreeds = () => {
                 showList && getOne.length > 0 ?
                     <div className="names-list">
                         <ul>
-                            {getOne.map((name, index) =>
-                                <Link className="list-item" to={`/breeds/search/${name}`}>
-                                    <li key={index}> {name} </li>
+                            {getOne.map((item, index) =>
+                                <Link className="list-item" to={`/breeds/search/${item.name}`}>
+                                    <li key={index}> {item.name} </li>
                                 </Link>
                             )}
                         </ul>
