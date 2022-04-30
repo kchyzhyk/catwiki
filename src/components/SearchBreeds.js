@@ -6,33 +6,14 @@ import {Link} from "react-router-dom";
 export const SearchBreeds = () => {
     const [showList, setShowList] = useState(false)
     const [allInfo, setAllInfo] = useState([])
-    const [allBreeds, setAllBreeds] = useState([
-        // 'Book',
-        // 'pear',
-        // 'l.addams',
-        // 'George',
-        // 'Bengal',
-        // 'trip',
-        // 'reason',
-        // 'near',
-        // 'wave',
-        // 'concerned',
-        // 'drain',
-        // 'vast',
-        // 'use',
-        // 'beam',
-        // 'massive',
-        // 'volcano',
-        // 'servant'
-    ])
     const [getOne, setGetOne] = useState([])
 
-    // useEffect(() => {
-    //     getAllBreeds().then(r => {
-    //         setAllInfo(r)
-    //         // setAllBreeds(r.map((it) => it.name))
-    //     })
-    // }, [])
+    useEffect(() => {
+        getAllBreeds().then(r => {
+            setAllInfo(r)
+            // setAllBreeds(r.map((it) => it.name))
+        })
+    }, [])
 
     const handleChange = (e) => {
         const value = e.target.value.trim().toLowerCase();

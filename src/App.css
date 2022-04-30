@@ -2,6 +2,7 @@
     --main-logo-color: #291507;
     --main-intro-color: #050709;
     --main-hr-color: #4D270C;
+    --main-stat-color: #544439;
 }
 
 
@@ -475,4 +476,47 @@
     color: var(--main-logo-color);
 
     margin: 0 0 32px 0;
+}
+
+.stats>*:not(:last-child) {
+    margin: 0 0 32px 0;
+}
+
+.stats {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: calc(20 / 16 * 100%);
+    color: #000000;
+}
+
+
+.stat {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(20 / 16 * 100%);
+    color: #000000;
+    margin: 0 5px 0 0;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.brown-bg {
+    display: inline-block;
+    height: .45rem;
+    width: 2rem;
+    background-color: #544439;
+    border: 1px solid #544439;
+    border-radius: 12px;
+    margin: 0 .2rem;
 }
