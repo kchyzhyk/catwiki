@@ -27,12 +27,12 @@ export const SearchBreeds = () => {
     ])
     const [getOne, setGetOne] = useState([])
 
-    useEffect(() => {
-        getAllBreeds().then(r => {
-            setAllInfo(r)
-            // setAllBreeds(r.map((it) => it.name))
-        })
-    }, [])
+    // useEffect(() => {
+    //     getAllBreeds().then(r => {
+    //         setAllInfo(r)
+    //         // setAllBreeds(r.map((it) => it.name))
+    //     })
+    // }, [])
 
     const handleChange = (e) => {
         const value = e.target.value.trim().toLowerCase();

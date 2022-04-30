@@ -1,21 +1,29 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {useParams} from "react-router-dom";
-import {getCurrBreed} from "../api/store";
 
 export const CurrBreedPage = () => {
     const {name} = useParams()
 
     const [currBreed, setCurrBreed] = useState([])
 
-    useEffect(() => {
-        getCurrBreed(name).then(r => setCurrBreed(r))
-    }, [])
+    // useEffect(() => {
+    //     getCurrBreed(name).then(r => setCurrBreed(r[0]))
+    // }, [])
 
     return (
         <>
-            <div>BREED PAGE</div>
-            <div>{name}</div>
-            <div>{console.log(currBreed.id)}</div>
+            <div className="breed-content">
+                <div className="breed-column">
+                    <div className="breed-profile-photo">photo</div>
+                </div>
+                    <div className="breed-profile-details">
+                        <div className="breed-name">Bengal</div>
+                        <div className="breed-desc">Bengal</div>
+                    </div>
+            </div>
+            <div className="breed-photos">
+                photos
+            </div>
         </>
     )
 }

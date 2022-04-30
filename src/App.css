@@ -401,3 +401,49 @@
 .list-item {
     text-decoration: none;
 }
+
+.breed-content, .breed-photos {
+    display: flex;
+    flex: 0 1 100%;
+    padding: 0 50px;
+}
+
+.breed-column {
+    display: flex;
+    flex: 0 1 35%;
+    position: relative;
+}
+
+.breed-column:before {
+    content: '';
+    position: absolute;
+    width: 83px;
+    height: 305px;
+    left: 0;
+    top: 10%;
+
+
+    background: #DEC68B;
+    border-radius: 14px;
+    z-index: -1;
+}
+
+.breed-profile-photo {
+    width: 371px;
+    height: 371px;
+
+    background: crimson;
+    border-radius: 24px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.breed-profile-details {
+    margin: 0 0 0 115px ;
+}
+
+.breed-name {
+
+}
