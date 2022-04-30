@@ -18,3 +18,21 @@ export const getCurrBreed = async (param) => {
             console.log(err)
         })
 }
+
+export const getCurrBreedImg = async (id) => {
+    return await $axios
+        .get(`/images/${id}`)
+        .then((res) => res.data)
+        .catch(async (err) => {
+            console.log(err)
+        })
+}
+
+export const getImgs = async () => {
+    return await $axios
+        .get(`/images/search`)
+        .then((res) => res.data)
+        .catch(async (err) => {
+            console.log(err)
+        })
+}

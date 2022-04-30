@@ -1,65 +1,41 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import IntroLogo from "../css/img/logo-white.svg";
 import Arrow from "../css/img/read-more-arrow.png";
 import {Header} from "../components/Header";
 import {SearchBreeds} from "../components/SearchBreeds";
+import {getAllBreeds, getImgs} from "../api/store";
+import {TopFourBreeds} from "../components/TopFourBreeds";
 
 export const HomePage = () => {
+    const [top4, setTop4] = useState([])
+    const [allInfo, setAllInfo] = useState([])
+
+    // useEffect(() => {
+    //     getImgs().then(r => console.log(r[0]))
+    // }, [])
+
+    useEffect(() => {
+        getAllBreeds().then(r => {
+            setAllInfo(r)
+            const topFourBreeds = r.map((a) => ({sort: Math.random(), value: a}))
+                .sort((a, b) => a.sort - b.sort)
+                .map((a) => a.value)
+            setTop4(topFourBreeds.slice(0, 4))
+        })
+    }, [])
 
     return (
         <div>
             <div className="intro">
+                {console.log(allInfo)}
                 <img src={IntroLogo} alt="" className="whiteLogo"/>
                 <div className="introText">
                     Get to know more about your <br/> cat breed
                 </div>
-                <SearchBreeds />
+                <SearchBreeds allInfo={allInfo}/>
             </div>
-            <div className="top-breeds">
-                <div className="top-breeds-title">Most Searched Breeds</div>
-                <div className="top-breeds-hr"/>
-                <div className="subtitle-container">
-                    <div className="top-breeds-subtitle">66+ Breeds For you <br/> to discover</div>
-                    <Link to={'/'} className="top-breeds-button">SEE MORE
-                        <img src={Arrow} alt=""/>
-                    </Link>
-                </div>
-                <div className="top-breeds-cats">
-                    <Link to={'/'} className="top-breeds-column">
-                        <div className="top-breeds-cat">
-                            <div className="top-breeds-cat-img">
-                                hello
-                            </div>
-                            <div className="top-breeds-cat-name">Hello</div>
-                        </div>
-                    </Link>
-                    <Link to={'/'} className="top-breeds-column">
-                        <div className="top-breeds-cat">
-                            <div className="top-breeds-cat-img">
-                                hello
-                            </div>
-                            <div className="top-breeds-cat-name">Hello</div>
-                        </div>
-                    </Link>
-                    <Link to={'/'} className="top-breeds-column">
-                        <div className="top-breeds-cat">
-                            <div className="top-breeds-cat-img">
-                                hello
-                            </div>
-                            <div className="top-breeds-cat-name">Hello</div>
-                        </div>
-                    </Link>
-                    <Link to={'/'} className="top-breeds-column">
-                        <div className="top-breeds-cat">
-                            <div className="top-breeds-cat-img">
-                                hello
-                            </div>
-                            <div className="top-breeds-cat-name">Hello</div>
-                        </div>
-                    </Link>
-                </div>
-            </div>
+           <TopFourBreeds top4={top4}/>
             <div className="why-have-cat-section">
                 <div className="why-content">
                     <div className="why-text-hr"/>
