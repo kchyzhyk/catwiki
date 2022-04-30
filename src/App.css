@@ -15,6 +15,16 @@
     src: url('css/fonts/Montserrat-Variable.ttf') format("opentype");
 }
 
+@font-face {
+    font-family: "Montserrat-SemiBold";
+    src: url('css/fonts/Montserrat-Semibold600.ttf') format("opentype");
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url('css/fonts/Montserrat-Bold700.ttf') format("opentype");
+}
+
 .App {
 }
 
@@ -442,8 +452,27 @@
 
 .breed-profile-details {
     margin: 0 0 0 115px ;
+    max-width: 600px;
 }
 
 .breed-name {
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: calc(44 / 36 * 100%);
+    color: var(--main-logo-color);
 
+    margin: 0 0 25px 0;
+}
+
+.breed-desc {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: calc(22/18 * 100%);
+    color: var(--main-logo-color);
+
+    margin: 0 0 32px 0;
 }
