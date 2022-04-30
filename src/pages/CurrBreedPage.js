@@ -12,8 +12,6 @@ export const CurrBreedPage = () => {
         getCurrBreed(name).then(r => setCurrBreed(r[0]))
     }, [])
 
-
-
     return (
         <>
             <div className="breed-content">
@@ -21,11 +19,9 @@ export const CurrBreedPage = () => {
                     <div className="breed-profile-photo">photo</div>
                 </div>
                 <div className="breed-profile-details">
-                    <div className="breed-name">Bengal</div>
+                    <div className="breed-name">{currBreed.name}</div>
                     <div className="breed-desc">
-                        Bengals are a lot of fun to live with, but they're definitely not the cat for everyone, or for
-                        first-time cat owners. Extremely intelligent, curious and active, they demand a lot of
-                        interaction and woe betide the owner who doesn't provide it.
+                        {currBreed.description}
                     </div>
                     <BreedStats breed={currBreed}/>
                 </div>
