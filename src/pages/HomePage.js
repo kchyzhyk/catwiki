@@ -2,18 +2,17 @@ import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import IntroLogo from "../css/img/logo-white.svg";
 import Arrow from "../css/img/read-more-arrow.png";
-import {Header} from "../components/Header";
 import {SearchBreeds} from "../components/SearchBreeds";
-import {getAllBreeds, getImgs} from "../api/store";
+import {getAllBreeds} from "../api/store";
 import {TopFourBreeds} from "../components/TopFourBreeds";
+
+import Cat1 from '../css/img/cat-1.png'
+import Cat2 from '../css/img/cat-2.png'
+import Cat3 from '../css/img/cat-3.png'
 
 export const HomePage = () => {
     const [top4, setTop4] = useState([])
     const [allInfo, setAllInfo] = useState([])
-
-    // useEffect(() => {
-    //     getImgs().then(r => console.log(r[0]))
-    // }, [])
 
     useEffect(() => {
         getAllBreeds().then(r => {
@@ -28,7 +27,6 @@ export const HomePage = () => {
     return (
         <div>
             <div className="intro">
-                {console.log(allInfo)}
                 <img src={IntroLogo} alt="" className="whiteLogo"/>
                 <div className="introText">
                     Get to know more about your <br/> cat breed
@@ -51,11 +49,17 @@ export const HomePage = () => {
                 </div>
                 <div className="why-imgs">
                     <div className="why-imgs-column">
-                        <div className="why-img-1">pic-1</div>
-                        <div className="why-img-2">pic-2</div>
+                        <div className="why-img-1">
+                            <img src={Cat1} alt=""/>
+                        </div>
+                        <div className="why-img-2">
+                            <img src={Cat2} alt=""/>
+                        </div>
                     </div>
                     <div className="why-imgs-column">
-                        <div className="why-img-3">pic-3</div>
+                        <div className="why-img-3">
+                            <img src={Cat3} alt=""/>
+                        </div>
                     </div>
 
                 </div>
