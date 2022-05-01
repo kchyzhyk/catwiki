@@ -9,9 +9,11 @@ import {TopFourBreeds} from "../components/TopFourBreeds";
 import Cat1 from '../css/img/cat-1.png'
 import Cat2 from '../css/img/cat-2.png'
 import Cat3 from '../css/img/cat-3.png'
+import {Loading} from "../components/Loading";
 
 export const HomePage = () => {
     const [top4, setTop4] = useState([])
+    const [loading, setLoading] = useState(true)
     const [allInfo, setAllInfo] = useState([])
 
     useEffect(() => {
@@ -21,10 +23,11 @@ export const HomePage = () => {
                 .sort((a, b) => a.sort - b.sort)
                 .map((a) => a.value)
             setTop4(topFourBreeds.slice(0, 4))
+            setLoading(false)
         })
     }, [])
 
-    return (
+    return loading ? <Loading /> : (
         <div>
             <div className="intro">
                 <img src={IntroLogo} alt="" className="whiteLogo"/>

@@ -1,15 +1,18 @@
 import React, {useEffect, useState} from 'react'
 import {getTop10Breeds} from "../api/store";
 import {Link} from "react-router-dom";
+import {Loading} from "../components/Loading";
 
 export const TopTenBreedsPage = () => {
     const [top10, getTop10] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getTop10Breeds(10).then(r => getTop10(r))
+        setLoading(false)
     }, [])
 
-    return (
+    return loading ? <Loading/> : (
         <>
             <div className="top-content">
                 <div className="top-title">

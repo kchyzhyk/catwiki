@@ -2,11 +2,13 @@ import React, {useEffect, useState} from 'react'
 import {useParams} from "react-router-dom";
 import {getCurrBreed, getCurrBreedImg, getImgs} from "../api/store";
 import {BreedStats} from "../components/BreedStats";
+import {Loading} from "../components/Loading";
 
 export const CurrBreedPage = () => {
     const {name} = useParams()
 
     const [currBreed, setCurrBreed] = useState([])
+    const [loading, setLoading] = useState(true)
     const [otherPhotos, getOtherPhotos] = useState([])
     const [catImg, setCatImg] = useState('https://cdn2.thecatapi.com/images/SMuZx-bFM.jpg')
 
@@ -21,9 +23,10 @@ export const CurrBreedPage = () => {
 
     useEffect(() => {
         getImgs(8, currBreed.id).then(r => getOtherPhotos(r))
+        setLoading(false)
     }, [currBreed])
 
-    return (
+    return loading ? <Loading /> : (
         <>
             <div className="breed-content">
                 <div className="breed-column">

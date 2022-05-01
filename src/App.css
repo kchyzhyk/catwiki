@@ -36,6 +36,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding: 0 40px;
 }
 
 .App-header {
@@ -643,5 +644,34 @@
 
 .top-cat-link {
     text-decoration: none;
+}
 
+.not-found-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found-content h1{
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: calc(40 / 30 * 100%);
+    color: var(--main-logo-color);
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    border-radius: 16px;
+    /*height: 60%;*/
+    margin: 15% 0 50% 0;
+}
+
+.loading img {
+    width: 200px;
+    height: 200px;
 }
