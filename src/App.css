@@ -39,6 +39,19 @@
     padding: 0 40px;
 }
 
+@media(max-width: 768px) {
+    .container {
+        margin: 0 auto;
+        max-width: 650px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 0 40px;
+    }
+
+}
+
 .App-header {
     width: 100%;
     padding: 36px 0 39px 0;
@@ -92,6 +105,48 @@
     color: var(--main-logo-color);
 }
 
+@media(max-width: 768px) {
+    .intro {
+        border-radius: 40px 40px 0 0;
+        background: var(--main-intro-color);
+        padding: 25px 0 25px 30px;
+        background-image: url("../src/css/img/header-md.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .whiteLogo {
+        width: 150px;
+        height: 50px;
+        max-width: 300px;
+        margin: 0 0 11px 0;
+    }
+
+    .introText {
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-size: 15px;
+        color: white;
+        margin: 0 0 20px 0;
+    }
+
+    .search {
+        background: #FFFFFF;
+        border-radius: 59px;
+        width: 190px;
+        padding: 15px 19px 14px 19px;
+        outline: none;
+        border: none;
+        position: relative;
+
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: calc(14 / 10 * 100%);
+        color: var(--main-logo-color);
+    }
+}
+
 .search::-webkit-input-placeholder {
     font-family: 'Montserrat-Regular', sans-serif;
     font-style: normal;
@@ -119,6 +174,35 @@
     color: var(--main-logo-color);
 }
 
+@media(max-width: 768px) {
+    .search::-webkit-input-placeholder {
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: calc(14 / 10 * 100%);
+        color: var(--main-logo-color);
+    }
+
+    .search::-moz-placeholder {
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: calc(14 / 10 * 100%);
+        color: var(--main-logo-color);
+    }
+
+    .search:-ms-input-placeholder {
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: calc(14 / 10 * 100%);
+        color: var(--main-logo-color);
+    }
+}
+
 .form {
     position: relative;
     max-width: 380px;
@@ -128,6 +212,20 @@
     position: absolute;
     top: 25px;
     right: 50px;
+}
+
+
+@media(max-width: 768px) {
+    .form {
+        position: relative;
+        max-width: 280px;
+    }
+
+    .search-icon {
+        position: absolute;
+        top: 10px;
+        right: 65px;
+    }
 }
 
 .top-breeds {
@@ -147,6 +245,27 @@
     color: var(--main-logo-color);
 
     margin: 0 0 8px 0;
+}
+
+@media(max-width: 768px) {
+    .top-breeds {
+        background: #E3E1DC;
+        padding: 20px 34px 50px 34px;
+        border-radius: 0 0 40px 40px;
+
+        margin: 0 0 50px 0;
+    }
+
+    .top-breeds-title {
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: calc(22 / 18 * 100%);
+        color: var(--main-logo-color);
+
+        margin: 0 0 8px 0;
+    }
 }
 
 .top-breeds-hr {
@@ -174,6 +293,26 @@
     line-height: calc(59 / 48 * 100%);
     color: var(--main-logo-color);
 
+}
+
+@media(max-width: 768px) {
+    .subtitle-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: 0 0 46px 0;
+    }
+
+    .top-breeds-subtitle {
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: calc(24 / 20 * 100%);
+        color: var(--main-logo-color);
+
+    }
 }
 
 .top-breeds-button {
@@ -221,10 +360,24 @@
     z-index: 0;
 }
 
+@media(max-width: 768px) {
+    .top-breeds-cats::before {
+        content: "";
+        background-color: #DEC68B;
+        position: absolute;
+        height: 175px;
+        border-radius: 12px;
+        width: 20%;
+        left: 10px;
+        top: 25px;
+        z-index: 0;
+    }
+}
+
 .top-breeds-cat {
     position: relative;
     z-index: 1;
-    margin: 0 auto;
+    margin: 0 auto 15px auto;
 }
 
 .top-breeds-cat-img {
@@ -261,6 +414,24 @@
     flex: 0 1 50%;
     margin: 70px 0 0 0;
     align-items: center;
+}
+
+@media(max-width: 768px) {
+    .why-have-cat-section {
+        padding: 0 34px 50px 34px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .why-content {
+        flex: 0 1 100%;
+        margin: 30px 0 0 0;
+        align-items: center;
+    }
+
+    .why-have-cat-section>*:not(:last-child) {
+        margin: 0 0 30px 0;
+    }
 }
 
 .why-text-hr {
@@ -355,6 +526,19 @@
     padding: 25px 25px 25px 80px;
 }
 
+@media(max-width: 768px) {
+    .footer {
+        bottom: 0;
+        margin-top: auto;
+        display: flex;
+        flex-direction: column ;
+        justify-content: space-between;
+        align-items: start;
+
+        padding: 20px 25px 20px 40px;
+    }
+}
+
 .footer-copyright {
     font-family: 'Montserrat-Regular', sans-serif;
     font-style: normal;
@@ -446,6 +630,38 @@
     padding: 0 50px;
 }
 
+
+@media(max-width: 768px) {
+    .breed-content {
+        display: flex;
+        flex: 0 1 100%;
+        margin: 0 0 30px 0;
+
+        flex-wrap: wrap;
+    }
+
+    .breed-photos {
+        display: flex;
+        flex: 0 1 100%;
+        margin: 0 0 30px 0;
+    }
+
+    .breed-content {
+        padding: 0 20px;
+    }
+
+    .breed-photos {
+        flex-wrap: wrap ;
+    }
+    .breed-photos>* {
+        margin: 0 0 10px 0;
+    }
+
+    .breed-photos-body {
+        padding: 0;
+    }
+
+}
 .breed-photos-title {
     font-family: 'Montserrat-Regular', sans-serif;
     font-style: normal;
@@ -477,6 +693,29 @@
     z-index: -1;
 }
 
+
+@media(max-width: 768px) {
+    .breed-column {
+        display: flex;
+        flex: 0 1 100%;
+        position: relative;
+    }
+
+    .breed-column:before {
+        content: '';
+        position: absolute;
+        width: 83px;
+        height: 305px;
+        left: 25px;
+        top: 30px;
+
+
+        background: #DEC68B;
+        border-radius: 14px;
+        z-index: -1;
+    }
+}
+
 .breed-profile-photo {
     width: 371px;
     height: 371px;
@@ -498,6 +737,25 @@
 .breed-profile-details {
     margin: 0 0 0 115px ;
     max-width: 600px;
+}
+
+@media(max-width: 768px) {
+    .breed-profile-details {
+        margin: 0 0 0 0 ;
+        max-width: 600px;
+    }
+
+    .breed-profile-photo {
+        width: 500px;
+        height: 371px;
+        margin: 0 auto 30px auto;
+    }
+
+    .breed-profile-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .breed-name {
@@ -585,6 +843,28 @@
     object-fit: cover;
 }
 
+@media(max-width: 768px) {
+    .breed-photos-column {
+        display: flex;
+        flex: 0 1 33.33%;
+    }
+
+    .breed-photo {
+        width: 200px;
+        height: 200px;
+
+        background: white;
+        border-radius: 24px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .breed-photo img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 .top-title {
     font-family: 'Montserrat-Bold', sans-serif;
     font-style: normal;
@@ -661,6 +941,28 @@
     color: var(--main-logo-color);
 }
 
+@media(max-width: 768px) {
+    .not-found-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .not-found-content img{
+        width: 370px;
+        height: 300px;
+    }
+
+    .not-found-content h1{
+        font-family: 'Montserrat-SemiBold', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: calc(20 / 15 * 100%);
+        color: var(--main-logo-color);
+    }
+}
+
 .loading {
     display: flex;
     flex-direction: column;
@@ -674,4 +976,8 @@
 .loading img {
     width: 200px;
     height: 200px;
+}
+
+@media(max-width: 768px) {
+
 }

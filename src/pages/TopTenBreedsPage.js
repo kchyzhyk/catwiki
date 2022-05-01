@@ -19,19 +19,19 @@ export const TopTenBreedsPage = () => {
                     Top 10 most searched breeds
                 </div>
                 <div className="top-cats">
-                    {top10.length > 0 ? top10.map((item, i) => {
+                    {top10?.length > 0 ? top10.map((item, i) => {
                         return (
                             <Link to={`/breeds/search/${item.name}`} className="top-cat-link" key={i}>
                                 <div className="top-cat">
                                     <div className="top-cat-img">
-                                        <img src={item.image.url} alt=""/>
+                                        <img src={item?.image.url} alt=""/>
                                     </div>
                                     <div className="top-cat-content">
                                         <div className="top-cat-name">
-                                            {i + 1}. {item.name}
+                                            {i + 1}. {item?.name}
                                         </div>
                                         <div className="top-cat-desc">
-                                            {item.description}
+                                            {item?.description}
                                         </div>
                                     </div>
                                 </div>

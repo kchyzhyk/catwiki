@@ -19,13 +19,16 @@ export const HomePage = () => {
     useEffect(() => {
         getAllBreeds().then(r => {
             setAllInfo(r)
-            const topFourBreeds = r.map((a) => ({sort: Math.random(), value: a}))
-                .sort((a, b) => a.sort - b.sort)
-                .map((a) => a.value)
-            setTop4(topFourBreeds.slice(0, 4))
-            setLoading(false)
         })
     }, [])
+
+    useEffect( () => {
+        const topFourBreeds = allInfo?.map((a) => ({sort: Math.random(), value: a}))
+            .sort((a, b) => a.sort - b.sort)
+            .map((a) => a.value)
+        setTop4(topFourBreeds?.slice(0, 4))
+        setLoading(false)
+    },[allInfo])
 
     return loading ? <Loading /> : (
         <div>

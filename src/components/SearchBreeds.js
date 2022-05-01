@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import SearchIcon from "@material-ui/icons/Search";
-import {getAllBreeds} from "../api/store";
 import {Link} from "react-router-dom";
 
 export const SearchBreeds = ({allInfo}) => {
@@ -11,7 +10,7 @@ export const SearchBreeds = ({allInfo}) => {
     const handleChange = (e) => {
         const value = e.target.value.trim().toLowerCase();
         const results = []
-        allInfo.map((item) => item.name.toLowerCase().includes(value) ? results.push(item) : item)
+        allInfo?.map((item) => item.name.toLowerCase().includes(value) ? results.push(item) : item)
         setGetOne(results)
     }
 
@@ -25,12 +24,12 @@ export const SearchBreeds = ({allInfo}) => {
             />
             <SearchIcon className="search-icon"/>
 
-            {showList && getOne.length > 0 ?
+            {showList && getOne?.length > 0 ?
                     <div className="names-list">
                         <ul>
-                            {getOne.map((item, index) =>
-                                <Link className="list-item" to={`/breeds/search/${item.name}`}>
-                                    <li key={index}> {item.name} </li>
+                            {getOne.map((item, i) =>
+                                <Link className="list-item" to={`/breeds/search/${item.name}`} key={i}>
+                                    <li key={item.id}> {item.name} </li>
                                 </Link>
                             )}
                         </ul>
