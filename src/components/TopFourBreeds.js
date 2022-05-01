@@ -10,7 +10,7 @@ export const TopFourBreeds = ({top4}) => {
                 <div className="top-breeds-hr"/>
                 <div className="subtitle-container">
                     <div className="top-breeds-subtitle">66+ Breeds For you <br/> to discover</div>
-                    <Link to={'/'} className="top-breeds-button">SEE MORE
+                    <Link to={'/breeds/top-10'} className="top-breeds-button">SEE MORE
                         <img src={Arrow} alt=""/>
                     </Link>
                 </div>

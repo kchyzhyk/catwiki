@@ -8,6 +8,14 @@ export const getAllBreeds = async () => {
             console.log(err)
         });
 };
+export const getTop10Breeds = async (limit) => {
+    return await $axios
+        .get("/breeds", {params: { limit: limit}})
+        .then((res) => res.data)
+        .catch(async (err) => {
+            console.log(err)
+        });
+};
 
 
 export const getCurrBreed = async (param) => {

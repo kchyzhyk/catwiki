@@ -3,9 +3,10 @@ import {HomePage} from "./pages/HomePage";
 import {Header} from "./components/Header";
 import React from "react";
 import {Footer} from "./components/Footer";
-import { Routes, Route, Link} from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 import {NotFoundPage} from "./pages/NotFoundPage";
 import {CurrBreedPage} from "./pages/CurrBreedPage";
+import {TopTenBreedsPage} from "./pages/TopTenBreedsPage";
 
 export default function App() {
 
@@ -17,6 +18,7 @@ export default function App() {
                         <Route path="/" element={<HomePage/>} />
                         <Route path="*" element={<NotFoundPage/>} />
                         <Route path="/breeds/search/:name" element={<CurrBreedPage/>} />
+                        <Route path="/breeds/top-10" element={<TopTenBreedsPage/>} />
                     </Routes>
                     <Footer />
                 </div>
