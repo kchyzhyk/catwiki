@@ -28,9 +28,9 @@ export const getCurrBreedImg = async (id) => {
         })
 }
 
-export const getImgs = async () => {
+export const getImgs = async (count, breedId) => {
     return await $axios
-        .get(`/images/search`)
+        .get(`/images/search`, {params: {limit: count, breed_id: breedId}})
         .then((res) => res.data)
         .catch(async (err) => {
             console.log(err)

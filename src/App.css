@@ -427,7 +427,33 @@
 .breed-content, .breed-photos {
     display: flex;
     flex: 0 1 100%;
+    margin: 0 0 80px 0;
+}
+
+.breed-content {
     padding: 0 50px;
+}
+
+.breed-photos {
+    flex-wrap: wrap ;
+}
+.breed-photos>* {
+    margin: 0 0 10px 0;
+}
+
+.breed-photos-body {
+    padding: 0 50px;
+}
+
+.breed-photos-title {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: calc(44 / 36 * 100%);
+    color: var(--main-logo-color);
+
+    margin: 0 0 40px 0;
 }
 
 .breed-column {
@@ -536,4 +562,24 @@
     border: 1px solid #544439;
     border-radius: 12px;
     margin: 0 .2rem;
+}
+
+.breed-photos-column {
+    display: flex;
+    flex: 0 1 25%;
+}
+
+.breed-photo {
+    width: 278px;
+    height: 278px;
+
+    background: white;
+    border-radius: 24px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.breed-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
